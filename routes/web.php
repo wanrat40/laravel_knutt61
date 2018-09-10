@@ -14,3 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('hello', function(){
+return 'Hello Laravel';
+});
+
+Route::get('welcome/hello','WelcomeController@hello');
+
+
+Route::get('welcome/page/{id?}','WelcomeController@page');
+
+Route::get('welcome/page/{id?}/{title?}',
+'WelcomeController@page')
+->where(['id'=>'[0-9]+', 'title'=>'[a-zA-Z]+']);
+
+Route::get('bangkok', 'BangkokController@index');
