@@ -6,13 +6,16 @@ use Illuminate\Http\Request;
 
 class BangkokController extends Controller
 {
-  public function index(){
-    $htmlsyntax = '<div> ss<div>';
-    	$title = 'Laravel 5 Fundamental';
-		$subtitle = 'From basic to expert';
+//    public function index(){
+//        return 'Welcome to BangkokController';
+//    }
 
-		return view('bangkok.index',['title' => $title, 'subtitle' => $subtitle, 'htmlsyntax' => $htmlsyntax ]);
-  }
+    public function index() {
+        $htmlsyntax = '<div> kim</div>';
 
-
+        return view('bangkok.index')
+            ->with('title', 'Laravel 5 Training')
+            ->with('subtitle','An introduction to Laravel 5')
+            ->with('htmlsyntax', $htmlsyntax);
+    }
 }
